@@ -64,5 +64,8 @@ public class DepartmentService {
                    department.getFreelancers().add(employee);
                    return department;
                 })).orElse(null);
+
+//        departmentEntity
     }
+
 }

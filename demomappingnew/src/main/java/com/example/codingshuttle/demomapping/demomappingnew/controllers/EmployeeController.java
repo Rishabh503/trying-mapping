@@ -7,6 +7,8 @@ import com.example.codingshuttle.demomapping.demomappingnew.services.EmployeeSer
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path="/employees")
 public class EmployeeController {
@@ -21,7 +23,10 @@ public class EmployeeController {
     public EmployeeEntity getEmployeeById(@PathVariable Long employeeId){
         return employeeService.getEmployeeById(employeeId);
     }
-
+    @GetMapping
+    public List<EmployeeEntity> getallem(){
+        return employeeService.getall();
+    }
     @PostMapping
     public EmployeeEntity createNewEmployee(@RequestBody EmployeeEntity employeeEntity){
         return employeeService.createNewEmployee(employeeEntity);

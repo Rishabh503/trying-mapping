@@ -4,6 +4,8 @@ import com.example.codingshuttle.demomapping.demomappingnew.entities.EmployeeEnt
 import com.example.codingshuttle.demomapping.demomappingnew.repositories.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
 
@@ -20,5 +22,9 @@ public class EmployeeService {
 
     public EmployeeEntity createNewEmployee(EmployeeEntity employeeEntity) {
         return employeeRepository.save(employeeEntity);
+    }
+
+    public List<EmployeeEntity> getall() {
+        return employeeRepository.findAll();
     }
 }
